@@ -1,0 +1,20 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+
+COPY tsconfig.json ./
+
+COPY src/ ./src/
+
+RUN ls -la src/
+
+RUN npm run build
+
+RUN ls -la dist/
+
+EXPOSE 3000
+CMD ["npm", "start"]
