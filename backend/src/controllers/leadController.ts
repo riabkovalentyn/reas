@@ -3,7 +3,7 @@ import { validationResult } from "express-validator";
 import { leadService } from "../services/leadService";
 import { LeadDoc } from "../models/leadModel";
 
-export const createLead = async (req: Request, res: Response): Promise<LeadDoc | null | void> => {
+export const createLead = async (req: Request, res: Response): Promise<LeadDoc| void> => {
   try {
 
     const errors = validationResult(req);
